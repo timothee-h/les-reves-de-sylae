@@ -20,7 +20,7 @@
         <li><a href="autres-creations.html" title="Autres Creations">Autres Creations</a></li>
         <li><a href="presse-et-expo.html" title="Presse et expo">Presse et expo</a></li>
         <li><a href="a-propos.html" title="A propos">À propos</a></li>
-        <li><a href="contact.html" title="Contact">Contact</a></li>
+        <li><a id="current" href="contact.html" title="Contact">Contact</a></li>
       </ul>
     </nav>
     <span id="btn-nav" class="header--btn">
@@ -53,7 +53,7 @@
             </div>
             <div class="form-group control-group">
               <textarea type="text" class="form-control" id="message" required data-validation-required-message="Entrez votre message"></textarea>
-              <label for="message" class="textarea--label">message</label>
+              <label for="message" class="textarea--label">Message</label>
               <p class="help-block text-danger"></p>
             </div>
             <div id="success"></div>
@@ -99,7 +99,9 @@
         </div>
         <div class="col-md-4">
           <div class="footer--right">
-            <i class="fa fa-facebook"></i>
+            <a class="footer--right--link" href="https://www.facebook.com/lesrevesdesylae/?fref=ts">
+              <i class="fa fa-facebook"></i>
+            </a>
           </div>
         </div>
       </div>

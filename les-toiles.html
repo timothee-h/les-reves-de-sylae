@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/screen.css">
+  <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
   <header class="header">
@@ -16,7 +17,7 @@
     </a>
     <nav class="header--nav">
       <ul>
-        <li><a href="les-toiles.html" title="Les toiles">Les toiles</a></li>
+        <li><a id="current" href="les-toiles.html" title="Les toiles">Les toiles</a></li>
         <li><a href="autres-creations.html" title="Autres Creations">Autres Creations</a></li>
         <li><a href="presse-et-expo.html" title="Presse et expo">Presse et expo</a></li>
         <li><a href="a-propos.html" title="A propos">À propos</a></li>
@@ -27,30 +28,109 @@
       <span class="header--btn--line"></span>
     </span>
   </header>
-  <ul class="grid effect-1" id="grid">
-    <li><img src="img/img1.png"></a></li>
-    <li><img src="img/img2.png"></a></li>
-    <li><img src="img/img3.png"></a></li>
-    <li><img src="img/img4.png"></a></li>
-    <li><img src="img/img5.png"></a></li>
-    <li><img src="img/img6.png"></a></li>
-    <li><img src="img/img1.png"></a></li>
-    <li><img src="img/img2.png"></a></li>
-    <li><img src="img/img3.png"></a></li>
-    <li><img src="img/img4.png"></a></li>
-    <li><img src="img/img5.png"></a></li>
-    <li><img src="img/img6.png"></a></li>
-    <li><img src="img/img1.png"></a></li>
-    <li><img src="img/img2.png"></a></li>
-    <li><img src="img/img3.png"></a></li>
-    <li><img src="img/img4.png"></a></li>
-    <li><img src="img/img5.png"></a></li>
-    <li><img src="img/img6.png"></a></li>
-    <li><img src="img/img1.png"></a></li>
-    <li><img src="img/img2.png"></a></li>
-    <li><img src="img/img3.png"></a></li>
-    <li><img src="img/img4.png"></a></li>
-  </ul>
+  <div class="lesToiles">
+    <ul class="lesToiles--masonry" id="grid">
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile1.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile3.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile4.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile5.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile6.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile7.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile8.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile9.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile10.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile11.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile12.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile13.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile14.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile15.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile16.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile17.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile18.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile19.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile20.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile21.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile22.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile23.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile24.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile25.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile26.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile27.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile28.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile29.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile30.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile31.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile32.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile33.jpg"></div>
+      </li>
+      <li>
+        <div class="lesToiles--masonry--item"><img src="img/toiles/toile2.jpg"></div>
+      </li>
+    </ul>
+  </div>
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -72,16 +152,21 @@
         </div>
         <div class="col-md-4">
           <div class="footer--right">
-            <i class="fa fa-facebook"></i>
+            <a class="footer--right--link" href="https://www.facebook.com/lesrevesdesylae/?fref=ts">
+              <i class="fa fa-facebook"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </footer>
   <!--Scripts-->
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/imagesloaded.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/AnimOnScroll.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="js/min/jquery-parallax-min.js"></script>
-  <script src="js/min/masonry-min.js"></script>
   <script src="js/min/app-min.js"></script>
   <noscript>Votre navigateur ne support pas le JavaScript !</noscript>
 </body>
