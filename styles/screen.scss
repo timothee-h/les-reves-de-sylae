@@ -40,12 +40,15 @@ body {
       background-color: #fff;
       transition-duration: 0.5s;
       z-index: -1;
+      opacity: 0;
     }
     &:hover::before {
+      opacity: 1;
       left: 0;
       transition-duration: 0.5s;
     }
     &::after {
+      opacity: 0;
       content: '';
       display: inline-block;
       position: absolute;
@@ -58,6 +61,7 @@ body {
       z-index: -1;
     }
     &:hover::after {
+      opacity: 1;
       right: 0;
       transition-duration: 0.5s;
     }
@@ -77,6 +81,7 @@ body {
       color: #fff;
     }
     &::before {
+      opacity: 0;
       content: '';
       display: inline-block;
       position: absolute;
@@ -89,10 +94,12 @@ body {
       z-index: -1;
     }
     &:hover::before {
+      opacity: 1;
       left: 0;
       transition-duration: 0.3s;
     }
     &::after {
+      opacity: 0;
       content: '';
       display: inline-block;
       position: absolute;
@@ -105,10 +112,15 @@ body {
       z-index: -1;
     }
     &:hover::after {
+      opacity: 1;
       right: 0;
       transition-duration: 0.3s;
     }
   }
+}
+
+.none {
+  background-color: #121212;
 }
 
 .header {
@@ -119,9 +131,14 @@ body {
   height: 70px;
   line-height: 70px;
   z-index: 10;
-  background-color: #000000;
+  transition-duration: 0.5s;
+  &-activeEffect {
+    transition-duration: 0.5s;
+    background-color: #121212;
+  }
   @media screen and (max-width: 1000px){
     position: relative;
+    background-color: #121212;
   }
   &-active {
     margin-top: 275px;
@@ -129,10 +146,24 @@ body {
   }
   &--logo {
     float: left;
-    height: 70px;
+    height: 90px;
+    @media screen and (max-width: 1000px){
+      height: 70px;
+    }
     > img {
+      transition-duration: 0.5s;
       margin-top: 8px;
-      width: 150px;
+      width: 180px;
+      @media screen and (max-width: 1000px){
+        width: 130px;
+      }
+    }
+    &-activeEffect {
+      height: 70px;
+      > img {
+        transition-duration: 0.5s;
+        width: 130px;
+      }
     }
   }
   &--nav {
@@ -143,6 +174,7 @@ body {
       height: 275px;
       width: 100%;
       background-color: #1d1d1d;
+      text-align: center;
     }
     > ul {
       width: 630px;
@@ -285,6 +317,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  @media screen and (max-width: 1000px){
+    margin-top: -70px;
+  }
   &--container {
     position: absolute;
     top: 50%;
@@ -296,17 +331,18 @@ body {
       text-transform: uppercase;
       margin-bottom: 10px;
       text-align: left;
-      position: relative;
-      left: 50px;
+      margin-left: 20px;
     }
     &--title {
       display: inline-block;
       font-size: 45px;
-      margin-left: -100px;
+      width: 350px;
+      text-align: left;
       font-family: orphans, serif;
       display: block;
+      position: relative;
       span {
-        margin-left: 280px;
+        margin-left: 165px;
       }
     }
     &--btn {
@@ -370,6 +406,11 @@ body {
             text-decoration: none;
             color: #a5a5a5;
             padding: 10px 5px;
+            transition-duration: 0.3s;
+            &:hover {
+              color: $color;
+              transition-duration: 0.3s;
+            }
           }
         }
       }
@@ -438,7 +479,7 @@ body {
       }
     }
     &--gauche {
-      margin-top: 200px;
+      margin-top: 400px;
       color: #fff;
       position: relative;
       &--img {
@@ -450,6 +491,8 @@ body {
       }
       &--img:nth-child(2) {
         margin-top: -150px;
+        &:hover {
+        }
       }
       &--txt {
         margin-top: 50px;
@@ -459,7 +502,7 @@ body {
         height: 1px;
         background-color: #000;
         margin-top: 40px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
       }
       &--btn {
         color: #fff;
@@ -470,16 +513,19 @@ body {
     &--img {
       width: 400px;
       border: 2px solid #fff;
+      display: inline-block;
       &:nth-child(1) {
         margin-top: 50px;
       }
       &:nth-child(2) {
         margin-top: -50px;
         margin-left: 100px;
+
       }
       &:nth-child(3) {
-        margin-top: -70px;
+        margin-top: -30px;
         margin-right: 60px;
+        width: 350px;
       }
     }
   }
@@ -562,7 +608,7 @@ body {
     color:  #fff;
     font-family: orphans, serif;
     &--btn {
-      padding: 15px 30px;
+      background: none;
     }
     .form-group {
       position: relative;
@@ -810,6 +856,19 @@ body {
   }
 }
 
+.zoom--background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  z-index: 2;
+  opacity: 0.8;
+  display: none;
+  @media screen and (max-width: 1000px){
+    margin-top: -70px;
+  }
+}
+
 .lesToiles {
   padding-top: 100px;
   background-color: #000;
@@ -824,20 +883,6 @@ body {
       padding: 7px;
       width: 33%;
       opacity: 0;
-      img {
-        width: 100%;
-        transition-duration: 0.5s;
-        transform: scale(1);
-        opacity: 1;
-        position: relative;
-        z-index: 1;
-        cursor: pointer;
-      }
-      img:hover {
-        transform: scale(1.5);
-        transition-duration: 0.5s;
-        opacity: 0.5;
-      }
     }
     &--item {
       background-color: #000;
@@ -855,6 +900,30 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+      &--img {
+        width: 100%;
+        transition-duration: 0.5s;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        &:hover {
+          transition-duration: 0.5s;
+          opacity: 0.5;
+        }
+        &-active {
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          width: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1000;
+          &:hover {
+            transition-duration: 0s;
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -880,7 +949,7 @@ body {
 }
 
 .presse {
-  padding-top: 100px;
+  padding-top: 150px;
   position: relative;
   &::after {
     content: '';

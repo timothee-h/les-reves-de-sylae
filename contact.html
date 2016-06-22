@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles/screen.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header none">
     <a href="index.html" class="header--logo" title="Accueil">
       <img class="header--logo--img" src="img/logo.png" alt="Logo les rêves de sylaé">
     </a>
@@ -32,7 +32,7 @@
       <div class="row">
         <h1 class="contact--title">Contact</h1>
         <div class="col-md-6">
-          <form class="contact--form" name="sentMessage" id="contactForm" novalidate>
+          <form class="contact--form" name="sentMessage" id="contactForm" novalidat>
             <div class="form-group control-group">
               <input type="text" class="form-control" id="name" required data-validation-required-message="Entrez votre nom">
               <span class="bar"></span>
@@ -57,21 +57,20 @@
               <p class="help-block text-danger"></p>
             </div>
             <div id="success"></div>
-            <button type="submit" id="btnSubmit" class="btn contact--form--btn">Envoyer</button>
+            <button type="submit" id="btnSubmit" class="contact--form--btn btn">Envoyer</button>
           </form>
         </div>
         <div class="contact--infos col-md-6">
-          <h2 class="contact--infos--title">Sylvie Bouteiller</h2>
+          <h2 class="contact--infos--title">Sylvie BOUTEILLER</h2>
           <ul class="contact--infos--coord">
             <li><i class="fa fa-phone fa-2x"></i>Tel : 06 83 51 74 06</li>
             <li><i class="fa fa-envelope fa-2x"></i>Mail : lesrevesdesylae@orange.fr </li>
             <li><i class="fa fa-facebook-official fa-2x"></i>Les Rêves De Sylae</li>
-            <li><i class="fa fa-map-signs fa-2x"></i>Bosc-Hyons 76220 Seine Maritime</li>
+            <li><i class="fa fa-map-signs fa-2x"></i>BoscHyons 76220 Seine Maritime</li>
           </ul>
           <div class="contact--infos--stage">
-            <h2>Offrez-vous un stage !</h2>
             <p>
-              Un moment de créativité et de partage dans un lieu cosy et chaleureux.
+              Venez découvrir l’univers des Rêves de Sylaé dans le Chalet de Sylaé, un lieu cosy et chaleureux en Haute Normandie
             </p>
           </div>
         </div>
@@ -111,6 +110,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="js/jquery-parallax.js"></script>
   <script src="js/app.js"></script>
+  <!--Contact Form-->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
   <noscript>Votre navigateur ne support pas le JavaScript !</noscript>
 </body>
 </html>
