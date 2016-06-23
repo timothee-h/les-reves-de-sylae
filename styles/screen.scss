@@ -147,6 +147,11 @@ body {
   &--logo {
     float: left;
     height: 90px;
+    transition-duration: 0.5s;
+    &:hover {
+      transition-duration: 0.5s;
+      transform: scale(1.1);
+    }
     @media screen and (max-width: 1000px){
       height: 70px;
     }
@@ -385,8 +390,11 @@ body {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #121212;
   position: relative;
+  @media screen and (max-width: 991px) {
+    text-align: center;
+  }
   &--left {
     line-height: 70px;
     color: #fff;
@@ -420,6 +428,9 @@ body {
     text-align: right;
     height: 70px;
     line-height: 70px;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
     &--link {
       font-size: 30px;
       transition-duration: 0.3s;
@@ -438,6 +449,9 @@ body {
     border-top: 1px solid #fff;
     background-color: $color;
     padding: 60px 0px 60px 0px;
+    @media screen and (max-width: 767px){
+      text-align: center;
+    }
     &--txt {
       font-size: 20px;
       letter-spacing: 1px;
@@ -446,6 +460,10 @@ body {
     &--btn {
       float: right;
       padding: 15px 30px;
+      @media screen and (max-width: 767px){
+        float: none;
+        margin-top: 20px;
+      }
     }
   }
   &--creation {
@@ -482,17 +500,43 @@ body {
       margin-top: 400px;
       color: #fff;
       position: relative;
-      &--img {
-        width: 300px;
+      @media screen and (max-width: 991px){
+        margin-top: 200px;
+      }
+      &--stack {
+        margin: 0 auto;
+        width: 400px;
+        padding: 0;
+        position: relative;
+        max-width: 100%;
+        perspective: 1600px;
+      }
+
+      &--stack img {
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+        outline: 1px solid transparent;
+        transform: translateZ(0) translateX(0) rotateY(0);
         border: 2px solid #fff;
       }
-      &--img:nth-child(1) {
-        margin-left: 60px;
+
+      &--stack img:last-child {
+        position: relative;
       }
-      &--img:nth-child(2) {
-        margin-top: -150px;
-        &:hover {
-        }
+
+      &--stack:hover img:nth-child(3) {
+        transform: translateZ(-300px) translateX(-20%) rotateY(-45deg);
+      }
+
+      &--stack:hover img:first-child {
+        transform: translateZ(-300px) translateX(20%) rotateY(-45deg);
+      }
+
+      &--stack:hover img:nth-child(2) {
+        transform: translateZ(-300px) rotateY(-45deg);
       }
       &--txt {
         margin-top: 50px;
@@ -514,27 +558,66 @@ body {
       width: 400px;
       border: 2px solid #fff;
       display: inline-block;
+      @media screen and (max-width: 991px){
+        width: 300px;
+      }
       &:nth-child(1) {
         margin-top: 50px;
+        @media screen and (max-width: 991px){
+          margin-left: 70px;
+        }
+        @media screen and (max-width: 500px){
+          margin-left: 0;
+        }
       }
       &:nth-child(2) {
         margin-top: -50px;
         margin-left: 100px;
+        @media screen and (max-width: 991px){
+          margin-left: 150px;
+        }
+        @media screen and (max-width: 500px){
+          margin-left: 30px;
+        }
 
       }
       &:nth-child(3) {
         margin-top: -30px;
         margin-right: 60px;
         width: 350px;
+        @media screen and (max-width: 991px){
+          width: 300px;
+          margin-right: 0;
+          margin-left: 80px;
+        }
+        @media screen and (max-width: 500px){
+          margin-left: 0;
+        }
       }
     }
   }
   &--expo {
     margin-top: -100px;
+    @media screen and (max-width: 767px){
+      margin-top: -80px;
+    }
+    &--flex {
+      @media screen and (max-width: 767px){
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
+    }
     &--title {
       font-size: 45px;
       font-family: 'Kurale', serif;
       color: #fff;
+      position: relative;
+      z-index: 1;
+      position: relative;
+      bottom: 20px;
+      @media screen and (max-width: 767px){
+        bottom: 120px;
+      }
       &::before {
         content: '';
         display: inline-block;
@@ -558,6 +641,9 @@ body {
         font-family: 'orphans', serif;
         font-size: 30px;
         margin-top: 60px;
+        @media screen and (max-width: 767px){
+          margin-top: 50px;
+        }
       }
       &--txt {
         margin-top: 50px;
@@ -575,6 +661,13 @@ body {
       > img {
         border: 2px solid #fff;
         width: 450px;
+        margin-top: -80px;
+        @media screen and (max-width: 991px){
+          width: 370px;
+        }
+        @media screen and (max-width: 767px){
+          width: 70%;
+        }
       }
     }
   }
@@ -755,6 +848,12 @@ body {
 .apropos {
   margin-top: 150px;
   padding-bottom: 150px;
+  @media screen and (max-width: 771px) {
+    padding-bottom: 200px;
+  }
+  @media screen and (max-width: 560px) {
+    padding-bottom: 150px;
+  }
   &--title {
     font-size: 45px;
     font-family: 'Kurale', serif;
@@ -774,14 +873,19 @@ body {
       position: relative;
       top: -10px;
       margin-left: 190px;
+      @media screen and (max-width: 480px) {
+        margin-left: 100px;
+      }
     }
   }
   &--describ {
     margin-top: 50px;
     display: inline-block;
     width: 49%;
+    margin-left: 20px;
     @media screen and (max-width: 480px) {
       width: 100%;
+      padding-right: 30px;
     }
     &--cita {
       font-style: italic;
@@ -795,17 +899,23 @@ body {
       width: 500px;
       top: 80%;
       right: 90%;
-      @media screen and (max-width: 480px) {
-        position: relative;
-        width: 300px;
-        right: auto;
-        left: auto;
-        margin: 50px auto 0 auto;
-        top: 0;
-      }
-      @media screen and (min-width:480px) and (max-width:768px) {
+      @media screen and (max-width: 991px) {
         width: 400px;
-        font-size: 12px;
+      }
+      @media screen and (max-width: 779px) {
+        width: 300px;
+      }
+      @media screen and (max-width: 671px) {
+        position: relative;
+        right: 50px;
+        top: -20px;
+      }
+      @media screen and (max-width: 450px) {
+        position: relative;
+        right: 0px;
+        top: 0px;
+        width: 290px;
+        margin-top: 20px;
       }
     }
   }
@@ -872,6 +982,9 @@ body {
 .lesToiles {
   padding-top: 100px;
   background-color: #000;
+  @media screen and (max-width: 1000px){
+    padding-top: 30px;
+  }
   &--masonry {
     max-width: 69em;
     list-style: none;
@@ -883,6 +996,12 @@ body {
       padding: 7px;
       width: 33%;
       opacity: 0;
+      @media screen and (max-width: 750px){
+        width: 50%;
+      }
+      @media screen and (max-width: 500px){
+        width: 100%;
+      }
     }
     &--item {
       background-color: #000;
@@ -961,6 +1080,9 @@ body {
     width: 50%;
     background-color: #000;
     z-index: -1;
+    @media screen and (max-width: 991px) {
+      width: 100%;
+    }
   }
   &--title {
     font-family: 'orphans', serif;
@@ -973,6 +1095,9 @@ body {
     margin-bottom: 50px;
     &--gauche {
       display: inline-block;
+      @media screen and (max-width: 991px) {
+        color: #fff;
+      }
       &::after {
         content: '';
         margin-left: 10px;
@@ -980,6 +1105,9 @@ body {
         height: 2px;
         width: 40px;
         background-color: #000;
+        @media screen and (max-width: 991px) {
+          background-color: #fff;
+        }
       }
     }
     &--droite {
@@ -1048,6 +1176,9 @@ body {
     &--gauche {
       display: inline-block;
       text-align: right;
+      @media screen and (max-width: 991px) {
+        color: #fff;
+      }
       &::before {
         content: '';
         margin-right: 10px;
@@ -1055,6 +1186,9 @@ body {
         height: 2px;
         width: 40px;
         background-color: #000;
+        @media screen and (max-width: 991px) {
+          background-color: #fff;
+        }
       }
 
     }
